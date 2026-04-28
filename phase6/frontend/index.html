@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Restaurant Recommender</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0A0A0A;
+            --surface: #141414;
+            --surface-hover: #1A1A1A;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --accent: #2E5BFF;
+            --accent-glow: rgba(46, 91, 255, 0.4);
+            --accent-gradient: linear-gradient(135deg, #2E5BFF, #A02EFF);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: var(--accent);
+            filter: blur(150px);
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-col;
+            gap: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #050505;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-glow);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        button.submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--accent-glow);
+            margin-top: 1rem;
+        }
+
+        button.submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(160, 46, 255, 0.5);
+        }
+
+        button.submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Results Styles */
+        #results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .restaurant-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .restaurant-card:hover {
+            border-color: rgba(46, 91, 255, 0.3);
+            background: var(--surface-hover);
+        }
+
+        .restaurant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .restaurant-rating {
+            background: #252525;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #FFD700;
+            border: 1px solid var(--border);
+        }
+
+        .restaurant-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: rgba(46, 91, 255, 0.1);
+            color: #A3B8FF;
+            border: 1px solid rgba(46, 91, 255, 0.2);
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .explanation {
+            font-size: 0.95rem;
+            color: #D0D0D0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .error {
+            color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            margin-top: 1rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Loading Spinner */
+        .loader {
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>LUMIÈRE</h1>
+        <p class="subtitle">Basic Edition</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="location">Location (Neighborhood/City)</label>
+                    <input type="text" id="location" placeholder="e.g. BTM, Indiranagar" value="BTM" required>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <select id="budget">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="min_rating">Minimum Rating</label>
+                        <input type="number" id="min_rating" min="1" max="5" step="0.1" value="4.0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cuisines">Cravings (Optional)</label>
+                    <input type="text" id="cuisines" placeholder="e.g. Italian, Cafe">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span id="btnText">Get Recommendations</span>
+                </button>
+            </form>
+            <div id="error-container"></div>
+        </div>
+
+        <div id="results-container">
+            <!-- Results will be injected here -->
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const location = document.getElementById('location').value.trim();
+            const budget = document.getElementById('budget').value;
+            const min_rating = document.getElementById('min_rating').value;
+            const cuisines = document.getElementById('cuisines').value.trim();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const resultsContainer = document.getElementById('results-container');
+            const errorContainer = document.getElementById('error-container');
+            
+            // Set Loading State
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<span class="loader"></span> Discovering...';
+            resultsContainer.innerHTML = '';
+            errorContainer.innerHTML = '';
+
+            try {
+                const response = await fetch("http://127.0.0.1:8001/api/recommend", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        location: location || null,
+                        budget: budget || null,
+                        min_rating: min_rating ? String(min_rating) : null,
+                        cuisines: cuisines || null
+                    })
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json();
+                    let errMsg = "Failed to fetch recommendations";
+                    if (errData.detail) {
+                        errMsg = typeof errData.detail === 'string' ? errData.detail : JSON.stringify(errData.detail);
+                    }
+                    throw new Error(errMsg);
+                }
+
+                const data = await response.json();
+                
+                if (data.top && data.top.length > 0) {
+                    renderResults(data.top);
+                } else {
+                    resultsContainer.innerHTML = `
+                        <div class="card empty-state">
+                            <h3>No matches found</h3>
+                            <p>Try broadening your search criteria.</p>
+                        </div>
+                    `;
+                }
+
+            } catch (err) {
+                errorContainer.innerHTML = `<div class="error">${err.message}</div>`;
+            } finally {
+                submitBtn.disabled = false;
+                btnText.innerHTML = 'Get Recommendations';
+            }
+        });
+
+        function renderResults(results) {
+            const container = document.getElementById('results-container');
+            let html = '';
+
+            results.forEach(r => {
+                const cuisinesHtml = r.cuisines.map(c => `<span class="tag">${c.trim()}</span>`).join('');
+                
+                html += `
+                    <div class="restaurant-card">
+                        <div class="restaurant-header">
+                            <h3 class="restaurant-name">${r.name}</h3>
+                            <div class="restaurant-rating">★ ${r.rating}</div>
+                        </div>
+                        <div class="restaurant-meta">
+                            <span>📍 ${r.location}</span>
+                            <span>💵 ₹${r.cost_for_two} for two</span>
+                        </div>
+                        <div class="tag-list">
+                            ${cuisinesHtml}
+                        </div>
+                        ${r.explanation ? `<div class="explanation">✨ ${r.explanation}</div>` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

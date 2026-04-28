@@ -1,0 +1,172 @@
+{"timestamp": 1777152913.5111868, "operation": "load_restaurants", "latency_ms": 273.17, "status": "success"}
+{"timestamp": 1777152913.516017, "operation": "generate_candidates", "latency_ms": 4.67, "status": "success"}
+{"timestamp": 1777152913.516077, "event": "candidates_generated", "count": 6, "relaxations": 0}
+{"timestamp": 1777152913.5161128, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 6}
+{"timestamp": 1777152913.5161679, "operation": "groq_llm_call", "latency_ms": 0.01, "status": "error", "model": "llama3-8b-8192", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777152913.5162501, "event": "groq_ranking_fallback", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777152913.794506, "operation": "load_restaurants", "latency_ms": 275.12, "status": "success"}
+{"timestamp": 1777152913.7989628, "operation": "generate_candidates", "latency_ms": 4.35, "status": "success"}
+{"timestamp": 1777152913.7990022, "event": "candidates_generated", "count": 6, "relaxations": 0}
+{"timestamp": 1777152913.799037, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 6}
+{"timestamp": 1777152913.799086, "operation": "groq_llm_call", "latency_ms": 0.01, "status": "error", "model": "llama3-8b-8192", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777152913.799135, "event": "groq_ranking_fallback", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777152914.057871, "operation": "load_restaurants", "latency_ms": 255.91, "status": "success"}
+{"timestamp": 1777152914.062874, "operation": "generate_candidates", "latency_ms": 4.91, "status": "success"}
+{"timestamp": 1777152914.062921, "event": "candidates_generated", "count": 21, "relaxations": 0}
+{"timestamp": 1777152914.062966, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 21}
+{"timestamp": 1777152914.063033, "operation": "groq_llm_call", "latency_ms": 0.01, "status": "error", "model": "llama3-8b-8192", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777152914.063082, "event": "groq_ranking_fallback", "error": "GROQ_API_KEY environment variable is missing"}
+{"timestamp": 1777153590.429824, "operation": "load_restaurants", "latency_ms": 275.8, "status": "success"}
+{"timestamp": 1777153590.434911, "operation": "generate_candidates", "latency_ms": 4.76, "status": "success"}
+{"timestamp": 1777153590.434979, "event": "candidates_generated", "count": 6, "relaxations": 0}
+{"timestamp": 1777153590.435015, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 6}
+{"timestamp": 1777153591.513104, "operation": "groq_llm_call", "latency_ms": 1078.11, "status": "error", "model": "llama3-8b-8192", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777153591.513479, "event": "groq_ranking_fallback", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777153592.488847, "operation": "load_restaurants", "latency_ms": 339.88, "status": "success"}
+{"timestamp": 1777153592.4938738, "operation": "generate_candidates", "latency_ms": 4.91, "status": "success"}
+{"timestamp": 1777153592.49398, "event": "candidates_generated", "count": 6, "relaxations": 0}
+{"timestamp": 1777153592.494019, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 6}
+{"timestamp": 1777153592.675262, "operation": "groq_llm_call", "latency_ms": 181.21, "status": "error", "model": "llama3-8b-8192", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777153592.675493, "event": "groq_ranking_fallback", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777153593.537516, "operation": "load_restaurants", "latency_ms": 297.0, "status": "success"}
+{"timestamp": 1777153593.542411, "operation": "generate_candidates", "latency_ms": 4.79, "status": "success"}
+{"timestamp": 1777153593.5424798, "event": "candidates_generated", "count": 21, "relaxations": 0}
+{"timestamp": 1777153593.542527, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 21}
+{"timestamp": 1777153593.709004, "operation": "groq_llm_call", "latency_ms": 166.42, "status": "error", "model": "llama3-8b-8192", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777153593.709196, "event": "groq_ranking_fallback", "error": "Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"}
+{"timestamp": 1777154014.362116, "operation": "load_restaurants", "latency_ms": 276.22, "status": "success"}
+{"timestamp": 1777154014.38179, "operation": "generate_candidates", "latency_ms": 19.36, "status": "success"}
+{"timestamp": 1777154014.381909, "event": "candidates_generated", "count": 0, "relaxations": 4}
+{"timestamp": 1777154049.3277361, "operation": "load_restaurants", "latency_ms": 274.18, "status": "success"}
+{"timestamp": 1777154049.347548, "operation": "generate_candidates", "latency_ms": 19.53, "status": "success"}
+{"timestamp": 1777154049.3476539, "event": "candidates_generated", "count": 0, "relaxations": 4}
+{"timestamp": 1777154049.7394078, "operation": "load_restaurants", "latency_ms": 387.89, "status": "success"}
+{"timestamp": 1777154049.744174, "operation": "generate_candidates", "latency_ms": 4.66, "status": "success"}
+{"timestamp": 1777154049.7442172, "event": "candidates_generated", "count": 75, "relaxations": 0}
+{"timestamp": 1777154049.744301, "operation": "baseline_pre_ranking", "latency_ms": 0.06, "status": "success", "candidates": 75}
+{"timestamp": 1777154051.19753, "operation": "groq_llm_call", "latency_ms": 1453.26, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777154051.197998, "operation": "llm_validation", "latency_ms": 0.22, "status": "success"}
+{"timestamp": 1777154051.198067, "event": "groq_ranking_success", "validated_count": 18}
+{"timestamp": 1777154214.7823339, "operation": "load_restaurants", "latency_ms": 278.22, "status": "success"}
+{"timestamp": 1777154214.802391, "operation": "generate_candidates", "latency_ms": 19.77, "status": "success"}
+{"timestamp": 1777154214.802485, "event": "candidates_generated", "count": 0, "relaxations": 4}
+{"timestamp": 1777154215.0832121, "operation": "load_restaurants", "latency_ms": 277.01, "status": "success"}
+{"timestamp": 1777154215.087837, "operation": "generate_candidates", "latency_ms": 4.52, "status": "success"}
+{"timestamp": 1777154215.087882, "event": "candidates_generated", "count": 75, "relaxations": 0}
+{"timestamp": 1777154215.0879622, "operation": "baseline_pre_ranking", "latency_ms": 0.05, "status": "success", "candidates": 75}
+{"timestamp": 1777154217.242272, "operation": "groq_llm_call", "latency_ms": 2154.36, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777154217.24269, "operation": "llm_validation", "latency_ms": 0.18, "status": "success"}
+{"timestamp": 1777154217.242775, "event": "groq_ranking_success", "validated_count": 18}
+{"timestamp": 1777231337.700109, "operation": "load_and_index_restaurants", "latency_ms": 281.17, "status": "success"}
+{"timestamp": 1777231337.700934, "operation": "generate_candidates_indexed", "latency_ms": 0.48, "status": "success"}
+{"timestamp": 1777231337.7009778, "event": "candidates_generated", "count": 11, "relaxations": 0}
+{"timestamp": 1777231337.701018, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 11}
+{"timestamp": 1777231339.540083, "operation": "groq_llm_call", "latency_ms": 1838.78, "status": "success", "model": "llama-3.1-8b-instant"}
+{"timestamp": 1777231339.5404181, "operation": "llm_validation", "latency_ms": 0.11, "status": "success"}
+{"timestamp": 1777231339.543481, "event": "groq_ranking_success", "validated_count": 10}
+{"timestamp": 1777231339.5468328, "operation": "generate_candidates_indexed", "latency_ms": 1.18, "status": "success"}
+{"timestamp": 1777231339.5469172, "event": "candidates_generated", "count": 11, "relaxations": 0}
+{"timestamp": 1777231339.546987, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 11}
+{"timestamp": 1777231339.547137, "event": "groq_ranking_cache_hit"}
+{"timestamp": 1777410602.108486, "operation": "baseline_pre_ranking", "latency_ms": 0.06, "status": "success", "candidates": 16}
+{"timestamp": 1777410604.398478, "operation": "groq_llm_call", "latency_ms": 2289.4, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777410604.398643, "operation": "llm_validation", "latency_ms": 0.03, "status": "success"}
+{"timestamp": 1777410604.398678, "event": "groq_ranking_success", "validated_count": 13}
+{"timestamp": 1777412440.290127, "operation": "baseline_pre_ranking", "latency_ms": 0.09, "status": "success", "candidates": 76}
+{"timestamp": 1777412441.6704361, "operation": "groq_llm_call", "latency_ms": 1378.24, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777412441.6707468, "operation": "llm_validation", "latency_ms": 0.08, "status": "success"}
+{"timestamp": 1777412441.670808, "event": "groq_ranking_success", "validated_count": 15}
+{"timestamp": 1777412699.883457, "operation": "baseline_pre_ranking", "latency_ms": 0.57, "status": "success", "candidates": 732}
+{"timestamp": 1777412701.06283, "operation": "groq_llm_call", "latency_ms": 1178.28, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777412701.063339, "operation": "llm_validation", "latency_ms": 0.16, "status": "success"}
+{"timestamp": 1777412701.0636039, "event": "groq_ranking_success", "validated_count": 19}
+{"timestamp": 1777412736.2091908, "event": "cache_hit", "key": "Preferences(location=None, budget=<BudgetBand.medium: 'medium'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777412737.328583, "event": "cache_hit", "key": "Preferences(location=None, budget=<BudgetBand.medium: 'medium'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777412750.826721, "operation": "baseline_pre_ranking", "latency_ms": 1.01, "status": "success", "candidates": 577}
+{"timestamp": 1777412751.600503, "operation": "groq_llm_call", "latency_ms": 772.78, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777412751.600964, "operation": "llm_validation", "latency_ms": 0.16, "status": "success"}
+{"timestamp": 1777412751.6012008, "event": "groq_ranking_success", "validated_count": 10}
+{"timestamp": 1777413044.026176, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 15}
+{"timestamp": 1777413045.196478, "operation": "groq_llm_call", "latency_ms": 1169.41, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413045.196759, "operation": "llm_validation", "latency_ms": 0.05, "status": "success"}
+{"timestamp": 1777413045.196807, "event": "groq_ranking_success", "validated_count": 14}
+{"timestamp": 1777413109.315809, "operation": "baseline_pre_ranking", "latency_ms": 0.08, "status": "success", "candidates": 44}
+{"timestamp": 1777413112.558082, "operation": "groq_llm_call", "latency_ms": 3241.04, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413112.558497, "operation": "llm_validation", "latency_ms": 0.2, "status": "success"}
+{"timestamp": 1777413112.558579, "event": "groq_ranking_success", "validated_count": 19}
+{"timestamp": 1777413123.379294, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 9}
+{"timestamp": 1777413124.150222, "operation": "groq_llm_call", "latency_ms": 769.84, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413124.15095, "operation": "llm_validation", "latency_ms": 0.09, "status": "success"}
+{"timestamp": 1777413124.15122, "event": "groq_ranking_success", "validated_count": 9}
+{"timestamp": 1777413187.173861, "operation": "baseline_pre_ranking", "latency_ms": 0.13, "status": "success", "candidates": 42}
+{"timestamp": 1777413188.1170309, "operation": "groq_llm_call", "latency_ms": 942.52, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413188.117284, "operation": "llm_validation", "latency_ms": 0.06, "status": "success"}
+{"timestamp": 1777413188.117366, "event": "groq_ranking_success", "validated_count": 10}
+{"timestamp": 1777413192.1566641, "event": "cache_hit", "key": "Preferences(location='whitefield', budget=<BudgetBand.medium: 'medium'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777413733.746759, "event": "cache_hit", "key": "Preferences(location='whitefield', budget=<BudgetBand.medium: 'medium'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777413755.0457978, "operation": "baseline_pre_ranking", "latency_ms": 0.08, "status": "success", "candidates": 9}
+{"timestamp": 1777413756.0630138, "operation": "groq_llm_call", "latency_ms": 1016.77, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413756.063348, "operation": "llm_validation", "latency_ms": 0.07, "status": "success"}
+{"timestamp": 1777413756.0634592, "event": "groq_ranking_success", "validated_count": 9}
+{"timestamp": 1777413766.923535, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 6}
+{"timestamp": 1777413767.4345422, "operation": "groq_llm_call", "latency_ms": 510.5, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413767.4350998, "operation": "llm_validation", "latency_ms": 0.05, "status": "success"}
+{"timestamp": 1777413767.43521, "event": "groq_ranking_success", "validated_count": 6}
+{"timestamp": 1777413784.014742, "operation": "baseline_pre_ranking", "latency_ms": 0.04, "status": "success", "candidates": 7}
+{"timestamp": 1777413784.657472, "operation": "groq_llm_call", "latency_ms": 642.2, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413784.657804, "operation": "llm_validation", "latency_ms": 0.08, "status": "success"}
+{"timestamp": 1777413784.657931, "event": "groq_ranking_success", "validated_count": 7}
+{"timestamp": 1777413793.46815, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 2}
+{"timestamp": 1777413793.815278, "operation": "groq_llm_call", "latency_ms": 346.71, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413793.815587, "operation": "llm_validation", "latency_ms": 0.03, "status": "success"}
+{"timestamp": 1777413793.815685, "event": "groq_ranking_success", "validated_count": 2}
+{"timestamp": 1777413801.531543, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 11}
+{"timestamp": 1777413802.352248, "operation": "groq_llm_call", "latency_ms": 820.4, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777413802.3525739, "operation": "llm_validation", "latency_ms": 0.06, "status": "success"}
+{"timestamp": 1777413802.3526669, "event": "groq_ranking_success", "validated_count": 11}
+{"timestamp": 1777414367.4731772, "operation": "baseline_pre_ranking", "latency_ms": 0.11, "status": "success", "candidates": 53}
+{"timestamp": 1777414368.230659, "operation": "groq_llm_call", "latency_ms": 756.97, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777414368.2311208, "operation": "llm_validation", "latency_ms": 0.12, "status": "success"}
+{"timestamp": 1777414368.2312331, "event": "groq_ranking_success", "validated_count": 9}
+{"timestamp": 1777414373.431969, "event": "cache_hit", "key": "Preferences(location='BTM', budget=<BudgetBand.medium: 'medium'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777414378.575029, "operation": "baseline_pre_ranking", "latency_ms": 0.01, "status": "success", "candidates": 6}
+{"timestamp": 1777414379.21645, "operation": "groq_llm_call", "latency_ms": 641.31, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777414379.217429, "operation": "llm_validation", "latency_ms": 0.62, "status": "success"}
+{"timestamp": 1777414379.21797, "event": "groq_ranking_success", "validated_count": 6}
+{"timestamp": 1777414399.4560158, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 1}
+{"timestamp": 1777414399.878614, "operation": "groq_llm_call", "latency_ms": 422.19, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777414399.879074, "operation": "llm_validation", "latency_ms": 0.25, "status": "success"}
+{"timestamp": 1777414399.8791628, "event": "groq_ranking_success", "validated_count": 1}
+{"timestamp": 1777414412.365677, "event": "cache_hit", "key": "Preferences(location='BTM', budget=<BudgetBand.high: 'high'>, cuisines=[], min_rating=4.0, free_text=None)"}
+{"timestamp": 1777415801.075988, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 15}
+{"timestamp": 1777415802.494694, "operation": "groq_llm_call", "latency_ms": 1418.42, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415802.494891, "operation": "llm_validation", "latency_ms": 0.08, "status": "success"}
+{"timestamp": 1777415802.494988, "event": "groq_ranking_success", "validated_count": 15}
+{"timestamp": 1777415835.6728718, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 15}
+{"timestamp": 1777415836.743872, "operation": "groq_llm_call", "latency_ms": 1070.51, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415836.7441459, "operation": "llm_validation", "latency_ms": 0.11, "status": "success"}
+{"timestamp": 1777415836.744287, "event": "groq_ranking_success", "validated_count": 14}
+{"timestamp": 1777415880.916495, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 15}
+{"timestamp": 1777415881.939564, "operation": "groq_llm_call", "latency_ms": 1022.61, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415881.93974, "operation": "llm_validation", "latency_ms": 0.05, "status": "success"}
+{"timestamp": 1777415881.939776, "event": "groq_ranking_success", "validated_count": 14}
+{"timestamp": 1777415888.3706691, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 15}
+{"timestamp": 1777415890.683108, "operation": "groq_llm_call", "latency_ms": 2312.3, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415890.683713, "operation": "llm_validation", "latency_ms": 0.19, "status": "success"}
+{"timestamp": 1777415890.683768, "event": "groq_ranking_success", "validated_count": 15}
+{"timestamp": 1777415918.648076, "operation": "baseline_pre_ranking", "latency_ms": 0.02, "status": "success", "candidates": 15}
+{"timestamp": 1777415919.646361, "operation": "groq_llm_call", "latency_ms": 997.93, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415919.646535, "operation": "llm_validation", "latency_ms": 0.05, "status": "success"}
+{"timestamp": 1777415919.6465678, "event": "groq_ranking_success", "validated_count": 14}
+{"timestamp": 1777415940.531269, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 15}
+{"timestamp": 1777415941.485464, "operation": "groq_llm_call", "latency_ms": 953.75, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415941.4856262, "operation": "llm_validation", "latency_ms": 0.05, "status": "success"}
+{"timestamp": 1777415941.485663, "event": "groq_ranking_success", "validated_count": 14}
+{"timestamp": 1777415981.042314, "operation": "baseline_pre_ranking", "latency_ms": 0.04, "status": "success", "candidates": 3}
+{"timestamp": 1777415981.451606, "operation": "groq_llm_call", "latency_ms": 408.35, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415981.451743, "operation": "llm_validation", "latency_ms": 0.03, "status": "success"}
+{"timestamp": 1777415981.45178, "event": "groq_ranking_success", "validated_count": 3}
+{"timestamp": 1777415987.201917, "operation": "baseline_pre_ranking", "latency_ms": 0.03, "status": "success", "candidates": 3}
+{"timestamp": 1777415987.705237, "operation": "groq_llm_call", "latency_ms": 502.7, "status": "success", "model": "llama3-8b-8192"}
+{"timestamp": 1777415987.705413, "operation": "llm_validation", "latency_ms": 0.03, "status": "success"}
+{"timestamp": 1777415987.705452, "event": "groq_ranking_success", "validated_count": 3}

@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "dataset_name": "ManikaSaini/zomato-restaurant-recommendation",
+    "dataset_split": "train",
+    "input_rows": 51717,
+    "output_rows": 51717,
+    "dropped_missing_name": 0,
+    "missing_location": 21,
+    "missing_rating": 10052,
+    "missing_cost": 346
+  },
+  "counts": {
+    "input_rows": 51717,
+    "output_rows": 51717,
+    "dropped_missing_name": 0,
+    "missing_location": 21,
+    "missing_rating": 10052,
+    "missing_cost": 346
+  },
+  "notes": {
+    "determinism": "Output is sorted by (location, name, restaurant_id). IDs are stable hashes of normalized fields.",
+    "grounding": "LLM not used in Phase 0. Artifacts are intended as the single source of truth for later phases."
+  }
+}

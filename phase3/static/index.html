@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Restaurant Recommender</title>
+    <meta name="description" content="Discover your next favorite restaurant with our AI-powered recommendation system.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <h1>Crave<span>AI</span></h1>
+            <p>Find the perfect dining spot tailored exactly to your taste.</p>
+        </header>
+
+        <section class="glass-panel form-section">
+            <form id="recommendForm">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Indiranagar, BTM" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="budget">Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Any</option>
+                            <option value="low">Low (₹)</option>
+                            <option value="medium">Medium (₹₹)</option>
+                            <option value="high">High (₹₹₹)</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label for="min_rating">Min Rating</label>
+                        <input type="number" id="min_rating" name="min_rating" min="1" max="5" step="0.1" placeholder="e.g. 4.0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cuisines">Cuisines</label>
+                    <input type="text" id="cuisines" name="cuisines" placeholder="e.g. North Indian, Chinese">
+                </div>
+
+                <div class="form-group">
+                    <label for="free_text">Additional Preferences</label>
+                    <textarea id="free_text" name="free_text" rows="2" placeholder="e.g. A quiet place for a romantic dinner, good for kids..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Find Restaurants</span>
+                    <div class="loader hidden"></div>
+                </button>
+            </form>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <div class="results-header">
+                <h2>Top Recommendations</h2>
+                <div id="metaInfo" class="meta-info"></div>
+            </div>
+            
+            <div id="fallbackWarning" class="fallback-warning hidden">
+                ⚠️ API Key missing or error occurred. Displaying baseline recommendations.
+            </div>
+
+            <div id="resultsList" class="results-list">
+                <!-- Results injected here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
