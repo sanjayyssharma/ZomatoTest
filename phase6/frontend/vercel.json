@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://${RAILWAY_BACKEND_URL}/api/$1"
-    }
-  ]
-}
