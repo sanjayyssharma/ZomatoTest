@@ -330,6 +330,12 @@
     </main>
 
     <script>
+        // Configuration for API URL
+        // Make sure to replace RENDER_API_URL with your actual deployed backend URL!
+        const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+        const RENDER_API_URL = "https://restaurant-recommender-api.onrender.com";
+        const API_BASE_URL = isLocalhost ? "http://127.0.0.1:8001" : RENDER_API_URL;
+
         document.getElementById('searchForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -350,7 +356,7 @@
             errorContainer.innerHTML = '';
 
             try {
-                const response = await fetch("http://127.0.0.1:8001/api/recommend", {
+                const response = await fetch(`${API_BASE_URL}/api/recommend`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
