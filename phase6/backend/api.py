@@ -23,15 +23,9 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI(title="Phase 6 Backend API")
 
-import os
-
-# Load FRONTEND_URL from environment variable or default to localhost and a placeholder Vercel URL
-allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "http://localhost:8000,http://localhost:3000,https://your-vercel-frontend-url.vercel.app")
-allowed_origins = [origin.strip() for origin in allowed_origins_env.split(",")]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
